@@ -3,12 +3,14 @@ Starts an Apache2 server in $(pwd). GNU/Linux & OSX only.
 ## Installation
 Global:
 ```
-$ git clone https://github.com/stealingudc/apache-pwd.git .
-$ sudo mv ./apache-pwd.sh /usr/local/bin/apache-pwd
+$ wget https://raw.githubusercontent.com/stealingudc/apache-pwd/main/apache-pwd.sh
+$ chmod +x apache-pwd.sh
+$ sudo mv apache-pwd.sh /usr/local/bin/apache-pwd
 ```
 Local:
 ```
-$ git clone https://github.com/stealingudc/apache-pwd.git .
+$ wget https://raw.githubusercontent.com/stealingudc/apache-pwd/main/apache-pwd.sh
+$ chmod +x apache-pwd.sh
 ```
 
 ## Usage
@@ -16,3 +18,6 @@ $ git clone https://github.com/stealingudc/apache-pwd.git .
 $ apache-pwd [port]
 ```
 Locally, use `./apache-pwd [port]` instead.
+
+#### Caveats
+- Resizing your terminal window causes a SIGWINCH, terminating the process. If you want to resize your terminal window after running this.. uh, don't. :3 (See [bug report #50669](https://bz.apache.org/bugzilla/show_bug.cgi?id=50669))
